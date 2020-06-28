@@ -48,6 +48,16 @@ Usage:
         # Path string for the main executable:
         freezehelper.executable_path
 
+        # NOTE: If your script is ever executed from a module, such as pytest, then that module will be the executable path.
+        # Be sure to account for such cases if necessary. For example:
+        # If invoked by 'python -m pytest', then freezehelper.executable_path would be the path to the pytest package.
+        # One way to account for this from the main program file:
+        import os
+        if freezehelper.executable_dir.endswith("pytest"):
+            PROGRAM_DIR = os.path.dirname(os.path.realpath(__name__))
+        else:
+            PROGRAM_DIR = freezehelper.executable_path
+
         ## Functions
 
         # Functions for getting directory of executable or path to main executable:
