@@ -32,8 +32,11 @@ Usage:
 
         # More bool items for platform:
         freezehelper.is_linux
+        freezehelper.is_not_linux
         freezehelper.is_mac
+        freezehelper.is_not_mac
         freezehelper.is_windows
+        freezehelper.is_not_windows
 
         # Bool items for process context:
         freezehelper.is_child_process

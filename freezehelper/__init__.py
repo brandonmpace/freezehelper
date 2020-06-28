@@ -28,7 +28,8 @@ __status__ = "Production"
 __version__ = "1.0.0"
 
 
-from .helpers import get_executable_dir, get_executable_path, is_linux, is_mac, is_windows
+from .helpers import get_executable_dir, get_executable_path
+from .helpers import is_linux, is_mac, is_windows, is_not_linux, is_not_mac, is_not_windows
 from .helpers import from_source, frozen, get_is_child_process
 
 executable_dir = get_executable_dir()

@@ -30,8 +30,11 @@ from_source = not frozen
 
 
 is_linux = sys.platform.startswith("linux")
+is_not_linux = not is_linux
 is_mac = sys.platform == "darwin"
+is_not_mac = not is_mac
 is_windows = sys.platform == "win32"
+is_not_windows = not is_windows
 
 
 def get_executable_dir(resolve_links: bool = True) -> str:
