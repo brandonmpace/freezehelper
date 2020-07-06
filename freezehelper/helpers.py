@@ -51,7 +51,8 @@ def get_executable_path(resolve_links: bool = True) -> str:
     return os.path.abspath(my_path)
 
 
-def get_is_child_process() -> bool:
+def is_child_process() -> bool:
+    """Returns True if the current context is not the main process"""
     if is_windows and frozen and (len(sys.argv) >= 2) and (sys.argv[1] == "--multiprocessing-fork"):
         return True  # frozen Windows executable child process
     elif multiprocessing.current_process().name != "MainProcess":
@@ -59,3 +60,7 @@ def get_is_child_process() -> bool:
     else:
         return False
 
+
+def is_main_process() -> bool:
+    """Returns True if the current context is the main process"""
+    return not is_child_process()

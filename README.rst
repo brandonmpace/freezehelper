@@ -38,9 +38,9 @@ Usage:
         freezehelper.is_windows
         freezehelper.is_not_windows
 
-        # Bool items for process context:
-        freezehelper.is_child_process
-        freezehelper.is_main_process
+        # Functions to check for process context:
+        freezehelper.is_child_process()
+        freezehelper.is_main_process()
 
         # Path string for directory containing the main executable:
         freezehelper.executable_dir
@@ -78,7 +78,7 @@ Usage:
         log_dir = os.path.join(freezehelper.executable_dir, "logs")
         child_log_dir = os.path.join(log_dir, "workers")
 
-        if freezehelper.is_main_process:
+        if freezehelper.is_main_process():
             log_file = os.path.join(log_dir, "main_process.log")
         else:
             log_file = os.path.join(child_log_dir, f"{os.getpid()}_worker.log")

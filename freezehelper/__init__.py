@@ -30,10 +30,7 @@ __version__ = "1.1.0"
 
 from .helpers import get_executable_dir, get_executable_path
 from .helpers import is_linux, is_mac, is_windows, is_not_linux, is_not_mac, is_not_windows
-from .helpers import from_source, frozen, get_is_child_process
+from .helpers import from_source, frozen, is_child_process, is_main_process
 
 executable_dir = get_executable_dir()
 executable_path = get_executable_path()
-
-is_child_process = get_is_child_process()
-is_main_process = not is_child_process
