@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="freezehelper",
-    version="1.1.0",
+    version="2.0.0",
     author="Brandon M. Pace",
     author_email="brandonmpace@gmail.com",
     description="A Python package to simplify checks for frozen state and executable directory",
